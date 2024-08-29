@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace InterfaceExercise
 {
@@ -37,13 +38,49 @@ namespace InterfaceExercise
 
             //Now, create objects of your 3 classes and give their members values.
             //Creatively display and organize their values
+
+            var carOne = new Car();
+            carOne.Make = "Chevrolet";
+            carOne.Model = "Chevelle";
+            carOne.Year = 1970;
+            carOne.HasWheels = true;
+            carOne.Logo = "Chevy Logo";
+            carOne.BasedInAmerica = true;
+            carOne.HasTrunk = true;
+            carOne.TrunkSpace = 3;
+
+            var truckOne = new Car();
+            truckOne.Make = "Dodge";
+            truckOne.Model = "Ram";
+            truckOne.Year = 1998;
+            truckOne.HasWheels = true;
+            truckOne.Logo = "Dodge Logo";
+            truckOne.BasedInAmerica = true;
+            truckOne.HasTrunk = true;
+            truckOne.TrunkSpace = 15;
             
+            var suvOne = new Car();
+            suvOne.Make = "Lamborghini";
+            suvOne.Model = "Urus";
+            suvOne.Year = 2024;
+            suvOne.HasWheels = true;
+            suvOne.Logo = "Lamborghini Logo";
+            suvOne.BasedInAmerica = false;
+            suvOne.HasTrunk = true;
+            suvOne.TrunkSpace = 8;
+
+            var parkingLot = new List<IVehicle>() { carOne, truckOne, suvOne };
+            foreach (var ride in parkingLot)
+            {
+                Console.WriteLine($"This is a {ride.Make} {ride.Model} from the year {ride.Year}");
+            }
+
             //Option for displaying values: 
             //Create a stubbed out method called DisplayDetails in your IVehicle interface.
             //Implement the stubbed out method in the derived classes.
             //In the scope of them method, use string interpolation to display property values.
             //In order to also interpolate values from ICompany, research how to extend interfaces.
-            
+
         }
     }
 }
